@@ -5,8 +5,10 @@ services:
           context: .
           dockerfile: Dockerfile
         command: python app.py    # Entry point command can be overrided here
-        ports:
-           - "5000:5000"          # port mapping
+        #ports:
+        #   - "5000:5000"          # port mapping
+        deploy:
+           replicas: 1
    nginx:
     image: nginx:latest
     volumes:
