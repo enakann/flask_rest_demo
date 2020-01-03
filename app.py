@@ -1,11 +1,11 @@
 from flask import Flask
-
+import socket
 
 app=Flask(__name__)
 
 @app.route("/")
 def hello():
-   return "<h1>This is a web app running on port 5000 in a docker container:v4</h1>"
+   return "<h1>Web page hosted from {}</h1>".format(socket.gethostname())
 
 
 
